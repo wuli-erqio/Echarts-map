@@ -200,6 +200,8 @@ header .show-time {
   transform: translate(-50%, -50%);
   background: url(../images/lbx.png);
   animation: rotate1 15s linear infinite;
+  background-size: 100% 100%;
+  opacity: .6;
 }
 @keyframes rotate1 {
   from {
@@ -209,4 +211,30 @@ header .show-time {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-
+@keyframes rotate2 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+.map .map3{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7.075rem;
+  height: 7.075rem;
+  transform: translate(-50%, -50%);
+  background: url(../images/jt.png);
+  background-size: 100% 100%;
+  animation: rotate2 15s linear infinite;
+  opacity: .6;
+}
+.map .chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10.125rem;
+}
