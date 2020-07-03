@@ -1,0 +1,29 @@
+/* 初始化 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url(../images/bg.jpg) no-repeat top center;
+  line-height: 1.15;
+}
+header {
+  position: relative;
+  height: 100px;
+  background: url(../images/head_bg.png);
+}
+header h1 {
+  font-size: .475rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1rem;
+}
+header .show-time {
+  position: absolute;
+  line-height: .9375rem;
+  top: 0;
+  right: .375rem;
+  font-size: .25rem;
+  color: #fff;
+}
