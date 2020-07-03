@@ -832,7 +832,7 @@ var option = {
         itemStyle: {
           normal: {
               // 地图省份背景颜色
-              areaColor: 'rgb(20, 41, 87, .8)',
+              areaColor: 'rgb(20, 41, 87, .6)',
               borderColor: '#195BB9',
               borderWidth: 1,
           },
