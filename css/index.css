@@ -163,3 +163,16 @@ header .show-time {
   width: 1px;
   background-color: rgba(255, 255, 255, .2);
 }
+
+.no .no-bd ul{
+  display: flex;
+}
+.no .no-bd ul li{
+  flex: 1;
+  text-align: center;
+  font-size: .225rem;
+  color: rgba(255, 255, 255, .7);
+  height: .5rem;
+  line-height: .5rem;
+  padding-top: .125rem;
+}
