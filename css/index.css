@@ -56,6 +56,11 @@ header .show-time {
   padding: 0 .1875rem .5rem;
   margin-bottom: .1875rem;
 }
+.panel a{
+  color: #fff;
+  text-decoration: none;
+  margin: 0 .125rem;
+}
 .panel::after {
   content: "";
   position: absolute;
