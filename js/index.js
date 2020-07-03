@@ -441,3 +441,53 @@
     myChart.resize()
   })
 })();
+// 饼状图1
+(function () {
+  var myChart = echarts.init(document.querySelector(".pie1 .chart"));
+  option = {
+    color: ["#065aab",  "#066eab",  "#0682ab",  "#0696ab",  "#06a0ab"],
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+    },
+    legend: {
+        bottom: "0%",
+        itemWidth: 10,
+        itemHeight: 10,
+        textStyle: {
+          color: "rgba(255,255,255,.5)",
+          fontSize: "12"
+        }
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            //  修改内圆半径和外圆半径为  百分比是相对于容器宽度来说的
+            radius: ['40%', '60%'],
+            avoidLabelOverlap: false,
+            // 不显示标签文字
+            label: {
+                show: false,
+                position: 'center'
+            },
+            // 不显示连接线
+            labelLine: {
+                show: false
+            },
+            data: [
+              { value: 1, name: "0岁以下" },
+              { value: 4, name: "20-29岁" },
+              { value: 2, name: "30-39岁" },
+              { value: 2, name: "40-49岁" },
+              { value: 1, name: "50岁以上" }
+            ]
+        }
+    ]
+};
+
+  myChart.setOption(option);
+  window.addEventListener('resize', function () {
+    myChart.resize()
+  })
+})();
