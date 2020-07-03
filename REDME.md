@@ -1,0 +1,7 @@
+- 基于flexible.js + rem 智能大屏适配
+- VScode cssrem 插件
+- Flex布局
+- Less 使用
+- 基于ECharts数据可视化展示
+- Echarts柱状图数据设置
+- ECharts地图注入
