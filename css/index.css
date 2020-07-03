@@ -39,6 +39,7 @@ header .show-time {
 }
 .mainbox .column:nth-child(2) {
   flex: 5;
+  margin: 0 .125rem .1875rem;
 }
 .panel {
   position: relative;
@@ -104,4 +105,9 @@ header .show-time {
 }
 .panel .chart {
   height: 3rem;
+}
+
+.no {
+  background-color: rgba(101, 132, 226, .1);
+  padding: .125rem;
 }
