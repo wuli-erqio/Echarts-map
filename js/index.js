@@ -308,7 +308,7 @@
       {
         type: 'category',
         boundaryGap: false,
-        data: [ "01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","26","28","29","30"],
+        data: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "26", "28", "29", "30"],
         axisLabel: {
           textStyle: {
             color: "rgba(255,255,255,.6)",
@@ -383,7 +383,7 @@
           borderWidth: 12
         },
         smooth: true,
-        data: [ 30, 40, 30, 40,30, 40, 30,60,20, 40, 30, 40, 30, 40,30, 40, 30,60,20, 40, 30, 40, 30, 40,30, 40, 20,60,50, 40],
+        data: [30, 40, 30, 40, 30, 40, 30, 60, 20, 40, 30, 40, 30, 40, 30, 40, 30, 60, 20, 40, 30, 40, 30, 40, 30, 40, 20, 60, 50, 40],
         // 单独修改当前线条样式
         lineStyle: {
           color: "#0184d5",
@@ -431,7 +431,7 @@
           width: 2
         },
         smooth: true,
-        data: [ 130, 10, 20, 40,30, 40, 80,60,20, 40, 90, 40,20, 140,30, 40, 130,20,20, 40, 80, 70, 30, 40,30, 120, 20,99,50, 20]
+        data: [130, 10, 20, 40, 30, 40, 80, 60, 20, 40, 90, 40, 20, 140, 30, 40, 130, 20, 20, 40, 80, 70, 30, 40, 30, 120, 20, 99, 50, 20]
       }
     ]
   };
@@ -445,46 +445,103 @@
 (function () {
   var myChart = echarts.init(document.querySelector(".pie1 .chart"));
   option = {
-    color: ["#065aab",  "#066eab",  "#0682ab",  "#0696ab",  "#06a0ab"],
+    color: ["#065aab", "#066eab", "#0682ab", "#0696ab", "#06a0ab"],
     tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b}: {c} ({d}%)'
+      trigger: 'item',
+      formatter: '{a} <br/>{b}: {c} ({d}%)'
     },
     legend: {
-        bottom: "0%",
-        itemWidth: 10,
-        itemHeight: 10,
-        textStyle: {
-          color: "rgba(255,255,255,.5)",
-          fontSize: "12"
-        }
+      bottom: "0%",
+      itemWidth: 10,
+      itemHeight: 10,
+      textStyle: {
+        color: "rgba(255,255,255,.5)",
+        fontSize: "12"
+      }
     },
     series: [
-        {
-            name: '访问来源',
-            type: 'pie',
-            //  修改内圆半径和外圆半径为  百分比是相对于容器宽度来说的
-            radius: ['40%', '60%'],
-            avoidLabelOverlap: false,
-            // 不显示标签文字
-            label: {
-                show: false,
-                position: 'center'
-            },
-            // 不显示连接线
-            labelLine: {
-                show: false
-            },
-            data: [
-              { value: 1, name: "0岁以下" },
-              { value: 4, name: "20-29岁" },
-              { value: 2, name: "30-39岁" },
-              { value: 2, name: "40-49岁" },
-              { value: 1, name: "50岁以上" }
-            ]
-        }
+      {
+        name: '访问来源',
+        type: 'pie',
+        //  修改内圆半径和外圆半径为  百分比是相对于容器宽度来说的
+        radius: ['40%', '60%'],
+        center: ["50%", "45%"],
+        avoidLabelOverlap: false,
+        // 不显示标签文字
+        label: {
+          show: false,
+          position: 'center'
+        },
+        // 不显示连接线
+        labelLine: {
+          show: false
+        },
+        data: [
+          { value: 1, name: "0岁以下" },
+          { value: 4, name: "20-29岁" },
+          { value: 2, name: "30-39岁" },
+          { value: 2, name: "40-49岁" },
+          { value: 1, name: "50岁以上" }
+        ]
+      }
     ]
-};
+  };
+
+  myChart.setOption(option);
+  window.addEventListener('resize', function () {
+    myChart.resize()
+  })
+})();
+// 饼状图2
+(function () {
+  var myChart = echarts.init(document.querySelector(".pie2 .chart"));
+  option = {
+    color: ['#006cff', '#60cda0', '#ed8884', '#ff9f7f', '#0096ff', '#9fe6b8', '#32c5e9', '#1d9dff'],
+    tooltip: {
+      trigger: 'item',
+      formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+      bottom: 0,
+      itemWidth: 10,
+      itemHeight: 10,
+      textStyle: {
+        color: "rgba(255,255,255,.5)",
+        fontSize: "12"
+      }
+    },
+    series: [
+      {
+        name: '地区分布',
+        type: 'pie',
+        radius: ['10%', '70%'],
+        center: ['50%', '50%'],
+        // 饼形图的显示模式改为 半径模式
+        roseType: "radius",
+        data: [
+          { value: 20, name: '云南' },
+          { value: 26, name: '北京' },
+          { value: 24, name: '山东' },
+          { value: 25, name: '河北' },
+          { value: 20, name: '江苏' },
+          { value: 25, name: '浙江' },
+          { value: 30, name: '四川' },
+          { value: 42, name: '湖北' }
+        ],
+        // 文本标签控制饼形图文字的相关样式， 注意它是一个对象
+        label: {
+          fontSize: 10
+        },
+        // 引导线调整
+        labelLine: {
+          // 连接扇形图线长
+          length: 6,
+          // 连接文字线长
+          length2: 8
+        } 
+      }
+    ]
+  };
 
   myChart.setOption(option);
   window.addEventListener('resize', function () {
